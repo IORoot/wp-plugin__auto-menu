@@ -153,7 +153,11 @@ function build_link($post_object, $count){
     if ($post_object->post_name == $current_post){ $current_class = ' menu-item-current '; }
 
     // Make a relative link. GUID seems to be stuck at dev.londonparkour.com.
-    $relative_url = str_replace( get_site_url(), '', $post_object->guid );
+    $info = parse_url(get_site_url());
+    $host = $info['host'];
+    $host_names = explode(".", $host);
+    $tld = $host_names[1] .'.'. $host_names[2];
+    $relative_url = preg_replace( "/.*$tld/",'', $post_object->guid );
 
     // output.
     $link = '<li class="menu-item menu-item-level-2 menu-item-'.$count.' menu-item-'. $post_object->ID .' menu-item-'. $post_object->post_name . $current_class . '">';
