@@ -152,9 +152,12 @@ function build_link($post_object, $count){
     $current_post = str_replace('/','', $_SERVER['REQUEST_URI']);
     if ($post_object->post_name == $current_post){ $current_class = ' menu-item-current '; }
 
+    // Make a relative link. GUID seems to be stuck at dev.londonparkour.com.
+    $relative_url = str_replace( get_site_url(), '', $post_object->guid );
+
     // output.
     $link = '<li class="menu-item menu-item-level-2 menu-item-'.$count.' menu-item-'. $post_object->ID .' menu-item-'. $post_object->post_name . $current_class . '">';
-        $link .= '<a class="menu-item-link '. $current_class . '" href="' . $post_object->guid .  '">';
+        $link .= '<a class="menu-item-link '. $current_class . '" href="' . $relative_url .  '">';
             $link .= $icon_string;
             $link .= $post_object->post_title;
         $link .= '</a>';
