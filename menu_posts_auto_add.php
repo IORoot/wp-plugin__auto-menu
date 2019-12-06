@@ -152,7 +152,7 @@ function build_link($post_object, $count){
     $current_post = str_replace('/','', $_SERVER['REQUEST_URI']);
     if ($post_object->post_name == $current_post){ $current_class = ' menu-item-current '; }
 
-    $relative_url = str_replace( get_site_url() ,'', $post_object->guid );
+    $relative_url = preg_replace( '/.*\.com/' ,'', $post_object->guid );
 
     // output.
     $link = '<li class="menu-item menu-item-level-2 menu-item-'.$count.' menu-item-'. $post_object->ID .' menu-item-'. $post_object->post_name . $current_class . '">';
