@@ -144,7 +144,7 @@ function build_link($post_object, $count)
     $icon = get_field('material_icon_code', $post_object->ID);
     $icon_string = '';
     if ($icon != '') {
-        $icon_string = '<i class="material-icons menu-item-icon">'.$icon.'</i>';
+        $icon_string = '<i class="mdi mdi-'.$icon.'"></i>';
     }
 
     // Check if link is current page.
