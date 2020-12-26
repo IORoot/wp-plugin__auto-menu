@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: _ANDYP - Auto add posts to menu
+Plugin Name: _ANDYP - Menus - Auto add posts to menu
 Plugin URI: http://londonparkour.com
 Description: <strong>🗂MENU</strong> | <em>Appearance > Menus > Category Post Menus.</em> | Allows you to add posts (of a specific category) to a specific menu automatically. Used on wiki.
 Version: 1.0
