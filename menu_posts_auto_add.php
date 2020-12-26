@@ -16,6 +16,11 @@ Author URI: http://londonparkour.com
 //             --> post 3
 //             --> post 4
 
+//  ┌─────────────────────────────────────────────────────────────────────────┐
+//  │                    Register with ANDYP Plugins                          │
+//  └─────────────────────────────────────────────────────────────────────────┘
+require __DIR__.'/src/acf/andyp_plugin_register.php';
+
 
 add_filter('wp_nav_menu_items', 'your_custom_menu_item', 10, 2);
 
